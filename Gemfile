@@ -11,4 +11,5 @@ group :test do
   gem 'rubocop', '~> 1.55'
   gem 'simplecov', '~> 0.16'
   gem 'simplecov-cobertura'
+  gem 'panolint', '~> 0.1.6'
 end
