@@ -4,34 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="498de637-dc03-411b-95ac-0b51722d3495" name="Changes" comment="Update gemspec and add tests for ReadmeExtractor&#10;&#10;Implemented tests for ReadmeExtractor class. Also, updated the gemspec by providing proper summary, description, and setting executable. Updated the Ruby version target and added new rules for RuboCop.">
+    <list default="true" id="498de637-dc03-411b-95ac-0b51722d3495" name="Changes" comment="Update gemspec and enhance ReadmeExtractor tests&#10;&#10;Refined the gemspec file and amplified test coverage for the ReadmeExtractor class. This includes augmenting the gemspec with a more appropriate summary, description, and executable settings. Ruby version targets were updated and new rules were added for RuboCop.">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/start" beforeDir="false" afterPath="$PROJECT_DIR$/bin/readmeExtractor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/readmeExtractor.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/readmeExtractor.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readmeExtractor.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/readmeExtractor.gemspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/complex-version/metadata.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/complex-version/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/complex-version/version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/platform/metadata.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/platform/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/platform/version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/version/metadata.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/version/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/version/version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_md_readme/metadata.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_md_readme/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_md_readme/version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_metadata/metadata.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_metadata/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_metadata/version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_rdoc_and_md_readme/metadata.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_rdoc_and_md_readme/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_rdoc_and_md_readme/version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_rdoc_readme/metadata.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_rdoc_readme/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_rdoc_readme/version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/readmeExtractor_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/readmeExtractor_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +59,7 @@
     "Ruby.readmeExtractor.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/viktor/projects/readmeExtractor/spec/fixtures/gems",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -352,7 +331,7 @@
       <workItem from="1712080319056" duration="456000" />
       <workItem from="1712141648494" duration="2338000" />
       <workItem from="1712184047298" duration="197000" />
-      <workItem from="1712184252405" duration="7815000" />
+      <workItem from="1712184252405" duration="8822000" />
     </task>
     <task id="LOCAL-00001" summary="Update gemspec and add tests for ReadmeExtractor&#10;&#10;Implemented tests for ReadmeExtractor class. Also, updated the gemspec by providing proper summary, description, and setting executable. Updated the Ruby version target and added new rules for RuboCop.">
       <option name="closed" value="true" />
@@ -362,7 +341,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712187567095</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update gemspec and enhance ReadmeExtractor tests&#10;&#10;Refined the gemspec file and amplified test coverage for the ReadmeExtractor class. This includes augmenting the gemspec with a more appropriate summary, description, and executable settings. Ruby version targets were updated and new rules were added for RuboCop.">
+      <option name="closed" value="true" />
+      <created>1712192327319</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712192327319</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,7 +357,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update gemspec and add tests for ReadmeExtractor&#10;&#10;Implemented tests for ReadmeExtractor class. Also, updated the gemspec by providing proper summary, description, and setting executable. Updated the Ruby version target and added new rules for RuboCop." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update gemspec and add tests for ReadmeExtractor&#10;&#10;Implemented tests for ReadmeExtractor class. Also, updated the gemspec by providing proper summary, description, and setting executable. Updated the Ruby version target and added new rules for RuboCop." />
+    <MESSAGE value="Update gemspec and enhance ReadmeExtractor tests&#10;&#10;Refined the gemspec file and amplified test coverage for the ReadmeExtractor class. This includes augmenting the gemspec with a more appropriate summary, description, and executable settings. Ruby version targets were updated and new rules were added for RuboCop." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update gemspec and enhance ReadmeExtractor tests&#10;&#10;Refined the gemspec file and amplified test coverage for the ReadmeExtractor class. This includes augmenting the gemspec with a more appropriate summary, description, and executable settings. Ruby version targets were updated and new rules were added for RuboCop." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
