@@ -65,8 +65,8 @@ DEPENDENCIES
   rake (~> 13.0)
   readmeExtractor!
   rspec (~> 3.0)
-  rubocop (~> 1.21)
-  simplecov
+  rubocop (~> 1.55)
+  simplecov (~> 0.16)
   simplecov-cobertura
 
 BUNDLED WITH
