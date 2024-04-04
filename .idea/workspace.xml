@@ -4,18 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="498de637-dc03-411b-95ac-0b51722d3495" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.ruby-version" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/fixtures/README.rdoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/fixtures/broken_gems/badname.gem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/fixtures/broken_gems/invalid_data_tar_gz-1.0.0.gem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/fixtures/broken_gems/without_data_tar_gz-1.0.0.gem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/fixtures/broken_gems/without_readme-1.0.0.gem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.rubocop.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.rubocop.yml" afterDir="false" />
+    <list default="true" id="498de637-dc03-411b-95ac-0b51722d3495" name="Changes" comment="Update gemspec and add tests for ReadmeExtractor&#10;&#10;Implemented tests for ReadmeExtractor class. Also, updated the gemspec by providing proper summary, description, and setting executable. Updated the Ruby version target and added new rules for RuboCop.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/start" beforeDir="false" afterPath="$PROJECT_DIR$/bin/readmeExtractor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/readmeExtractor.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/readmeExtractor.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/readmeExtractor/version.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/readmeExtractor/version.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readmeExtractor.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/readmeExtractor.gemspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/complex-version/metadata.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/complex-version/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/complex-version/version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/platform/metadata.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/platform/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/platform/version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/version/metadata.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/version/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/version/version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_md_readme/metadata.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_md_readme/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_md_readme/version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_metadata/metadata.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_metadata/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_metadata/version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_rdoc_and_md_readme/metadata.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_rdoc_and_md_readme/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_rdoc_and_md_readme/version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_rdoc_readme/metadata.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_rdoc_readme/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/fixtures/output/with_rdoc_readme/version" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/readmeExtractor_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/readmeExtractor_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +55,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RSpec.ReadmeExtractor#extract_from_gem_file when the gem contain a data.tar.gz file outputs 'README.MD not found in the gem.'.executor": "Run",
+    "RSpec.ReadmeExtractor#extract_from_gem_file when the gem contain a data.tar.gz file.executor": "Run",
     "RSpec.ReadmeExtractor#extract_from_gem_file when the gem contains a README file finds and reads the README file.executor": "Run",
     "RSpec.ReadmeExtractor#extract_from_gem_file when the gem contains a README file finds and reads the md README file.executor": "Debug",
     "RSpec.ReadmeExtractor#extract_from_gem_file when the gem contains a README file finds and reads the rdoc README file.executor": "Run",
@@ -54,8 +73,9 @@
     "RSpec.ReadmeExtractor#gem_list_prepare when gem files are present extracts and returns a hash of gem names and versions.executor": "Debug",
     "RSpec.ReadmeExtractor#gem_list_prepare when gem files are present.executor": "Debug",
     "RSpec.ReadmeExtractor#gem_list_prepare.executor": "Run",
+    "RSpec.ReadmeExtractor#perform extracts readme.md from gem files.executor": "Debug",
     "RSpec.ReadmeExtractor#perform.executor": "Run",
-    "RSpec.ReadmeExtractor.executor": "Debug",
+    "RSpec.ReadmeExtractor.executor": "Run",
     "RSpec.readmeExtractor_spec.executor": "Run",
     "Ruby.readmeExtractor.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -103,6 +123,42 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="ReadmeExtractor" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_EXAMPLE_MATCHES" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="LINE_NUMBER_EXAMPLE_IDS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ReadmeExtractor#extract_from_gem_file when the gem contain a data.tar.gz file outputs 'README.MD not found in the gem.'" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
+      <module name="readmeExtractor" />
+      <predefined_log_file enabled="true" id="RUBY_RSPEC" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/readmeExtractor_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATHS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="ReadmeExtractor#extract_from_gem_file when the gem contain a data.tar.gz file outputs 'README.MD not found in the gem.'" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_EXAMPLE_MATCHES" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="LINE_NUMBER_EXAMPLE_IDS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
@@ -187,6 +243,42 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
+    <configuration name="ReadmeExtractor#extract_from_gem_file when the gem file is corrupted or not a valid gzip file prints an error message" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
+      <module name="readmeExtractor" />
+      <predefined_log_file enabled="true" id="RUBY_RSPEC" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/readmeExtractor_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATHS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="ReadmeExtractor#extract_from_gem_file when the gem file is corrupted or not a valid gzip file prints an error message" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_EXAMPLE_MATCHES" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="LINE_NUMBER_EXAMPLE_IDS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="ReadmeExtractor#gem_list_prepare when gem files are present extracts and returns a hash of gem names and versions" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
       <module name="readmeExtractor" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
@@ -223,92 +315,20 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="ReadmeExtractor#gem_list_prepare" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
-      <module name="readmeExtractor" />
-      <predefined_log_file enabled="true" id="RUBY_RSPEC" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/readmeExtractor_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATHS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="ReadmeExtractor#gem_list_prepare" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_EXAMPLE_MATCHES" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="LINE_NUMBER_EXAMPLE_IDS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ReadmeExtractor#perform" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
-      <module name="readmeExtractor" />
-      <predefined_log_file enabled="true" id="RUBY_RSPEC" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/readmeExtractor_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATHS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="ReadmeExtractor#perform" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_EXAMPLE_MATCHES" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="LINE_NUMBER_EXAMPLE_IDS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="RSpec.ReadmeExtractor#extract_from_gem_file when the gem does not contain a README file outputs 'README.MD not found in the gem.'" />
+      <item itemvalue="RSpec.ReadmeExtractor#extract_from_gem_file when the gem contain a data.tar.gz file outputs 'README.MD not found in the gem.'" />
       <item itemvalue="RSpec.ReadmeExtractor#extract_from_gem_file when the gem contains a README file return md file if md and rdoc exists in gem" />
-      <item itemvalue="RSpec.ReadmeExtractor#gem_list_prepare" />
+      <item itemvalue="RSpec.ReadmeExtractor#extract_from_gem_file when the gem file is corrupted or not a valid gzip file prints an error message" />
       <item itemvalue="RSpec.ReadmeExtractor#gem_list_prepare when gem files are present extracts and returns a hash of gem names and versions" />
-      <item itemvalue="RSpec.ReadmeExtractor#perform" />
       <item itemvalue="RSpec.ReadmeExtractor" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="RSpec.ReadmeExtractor" />
-        <item itemvalue="RSpec.ReadmeExtractor#perform" />
         <item itemvalue="RSpec.ReadmeExtractor#gem_list_prepare when gem files are present extracts and returns a hash of gem names and versions" />
-        <item itemvalue="RSpec.ReadmeExtractor#gem_list_prepare" />
+        <item itemvalue="RSpec.ReadmeExtractor#extract_from_gem_file when the gem file is corrupted or not a valid gzip file prints an error message" />
+        <item itemvalue="RSpec.ReadmeExtractor#extract_from_gem_file when the gem contain a data.tar.gz file outputs 'README.MD not found in the gem.'" />
         <item itemvalue="RSpec.ReadmeExtractor#extract_from_gem_file when the gem contains a README file return md file if md and rdoc exists in gem" />
       </list>
     </recent_temporary>
@@ -332,47 +352,71 @@
       <workItem from="1712080319056" duration="456000" />
       <workItem from="1712141648494" duration="2338000" />
       <workItem from="1712184047298" duration="197000" />
-      <workItem from="1712184252405" duration="3152000" />
+      <workItem from="1712184252405" duration="7815000" />
     </task>
+    <task id="LOCAL-00001" summary="Update gemspec and add tests for ReadmeExtractor&#10;&#10;Implemented tests for ReadmeExtractor class. Also, updated the gemspec by providing proper summary, description, and setting executable. Updated the Ruby version target and added new rules for RuboCop.">
+      <option name="closed" value="true" />
+      <created>1712187567095</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712187567095</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update gemspec and add tests for ReadmeExtractor&#10;&#10;Implemented tests for ReadmeExtractor class. Also, updated the gemspec by providing proper summary, description, and setting executable. Updated the Ruby version target and added new rules for RuboCop." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update gemspec and add tests for ReadmeExtractor&#10;&#10;Implemented tests for ReadmeExtractor class. Also, updated the gemspec by providing proper summary, description, and setting executable. Updated the Ruby version target and added new rules for RuboCop." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/readmeExtractor.rb</url>
-          <line>59</line>
+          <line>58</line>
           <properties myBlockOrdinal="-1">
             <option name="block-ordinal" value="-1" />
           </properties>
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/lib/readmeExtractor.rb</url>
+          <line>48</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/readmeExtractor@readmeExtractor_spec.rcov" NAME="readmeExtractor_spec Coverage Results" MODIFIED="1712013706654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
-    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_contains_a_README_file_return_md_file_if_md_and_rdoc_exists_in_gem.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem contains a README file return md file if md and rdoc exists in gem Coverage Results" MODIFIED="1712185212824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
+    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_contains_a_README_file_return_md_file_if_md_and_rdoc_exists_in_gem.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem contains a README file return md file if md and rdoc exists in gem Coverage Results" MODIFIED="1712190743754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
     <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_does_not_contain_a_data_tar_gz_file_outputs__README_MD_not_found_in_the_gem__.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem does not contain a data.tar.gz file outputs 'README.MD not found in the gem.' Coverage Results" MODIFIED="1712018924043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
     <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_gem_list_prepare_when_gem_files_are_present.rcov" NAME="ReadmeExtractor#gem_list_prepare when gem files are present Coverage Results" MODIFIED="1712022005217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
-    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_perform.rcov" NAME="ReadmeExtractor#perform Coverage Results" MODIFIED="1712187167602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
-    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_gem_list_prepare_when_gem_files_are_present_extracts_and_returns_a_hash_of_gem_names_and_versions.rcov" NAME="ReadmeExtractor#gem_list_prepare when gem files are present extracts and returns a hash of gem names and versions Coverage Results" MODIFIED="1712186118872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
+    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_perform.rcov" NAME="ReadmeExtractor#perform Coverage Results" MODIFIED="1712189427914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
+    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_gem_list_prepare_when_gem_files_are_present_extracts_and_returns_a_hash_of_gem_names_and_versions.rcov" NAME="ReadmeExtractor#gem_list_prepare when gem files are present extracts and returns a hash of gem names and versions Coverage Results" MODIFIED="1712190965264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
     <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_gem_list_prepare_when_gem_file_names_do_not_match_the_expected_format.rcov" NAME="ReadmeExtractor#gem_list_prepare when gem file names do not match the expected format Coverage Results" MODIFIED="1712022071870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
     <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_file_is_corrupted_or_not_a_valid_gzip_file.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem file is corrupted or not a valid gzip file Coverage Results" MODIFIED="1712018055545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
-    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_gem_list_prepare.rcov" NAME="ReadmeExtractor#gem_list_prepare Coverage Results" MODIFIED="1712185394201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
+    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_gem_list_prepare.rcov" NAME="ReadmeExtractor#gem_list_prepare Coverage Results" MODIFIED="1712188002346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
     <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file.rcov" NAME="ReadmeExtractor#extract_from_gem_file Coverage Results" MODIFIED="1712015717922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
     <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_gem_list_prepare_when_gem_file_names_do_not_match_the_expected_format_raises_GemFileNameError.rcov" NAME="ReadmeExtractor#gem_list_prepare when gem file names do not match the expected format raises GemFileNameError Coverage Results" MODIFIED="1712022195772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
     <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_contains_a_README_file_finds_and_reads_the_README_file.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem contains a README file finds and reads the README file Coverage Results" MODIFIED="1712018081732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
-    <SUITE FILE_PATH="coverage/readmeExtractor@readmeExtractor.rcov" NAME="readmeExtractor Coverage Results" MODIFIED="1712017610525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
-    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_contains_a_README_file_finds_and_reads_the_rdoc_README_file.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem contains a README file finds and reads the rdoc README file Coverage Results" MODIFIED="1712019876124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
-    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_file_is_corrupted_or_not_a_valid_gzip_file_prints_an_error_message.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem file is corrupted or not a valid gzip file prints an error message Coverage Results" MODIFIED="1712018074090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
+    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_perform_extracts_readme_md_from_gem_files.rcov" NAME="ReadmeExtractor#perform extracts readme.md from gem files Coverage Results" MODIFIED="1712190152422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
+    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_contain_a_data_tar_gz_file.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem contain a data.tar.gz file Coverage Results" MODIFIED="1712190249855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
+    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_contains_a_README_file_finds_and_reads_the_rdoc_README_file.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem contains a README file finds and reads the rdoc README file Coverage Results" MODIFIED="1712190451023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
+    <SUITE FILE_PATH="coverage/readmeExtractor@readmeExtractor.rcov" NAME="readmeExtractor Coverage Results" MODIFIED="1712190624521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
+    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_contain_a_data_tar_gz_file_outputs__README_MD_not_found_in_the_gem__.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem contain a data.tar.gz file outputs 'README.MD not found in the gem.' Coverage Results" MODIFIED="1712190772260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
     <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_contains_a_README_file.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem contains a README file Coverage Results" MODIFIED="1712016372753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
-    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor.rcov" NAME="ReadmeExtractor Coverage Results" MODIFIED="1712187327403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
-    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_does_not_contain_a_README_file_outputs__README_MD_not_found_in_the_gem__.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem does not contain a README file outputs 'README.MD not found in the gem.' Coverage Results" MODIFIED="1712019883478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
+    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_file_is_corrupted_or_not_a_valid_gzip_file_prints_an_error_message.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem file is corrupted or not a valid gzip file prints an error message Coverage Results" MODIFIED="1712190783610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
+    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor.rcov" NAME="ReadmeExtractor Coverage Results" MODIFIED="1712190969433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
+    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_does_not_contain_a_README_file_outputs__README_MD_not_found_in_the_gem__.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem does not contain a README file outputs 'README.MD not found in the gem.' Coverage Results" MODIFIED="1712190760254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
     <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_does_not_contain_a_README_file.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem does not contain a README file Coverage Results" MODIFIED="1712017639752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
-    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_contains_a_README_file_finds_and_reads_the_md_README_file.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem contains a README file finds and reads the md README file Coverage Results" MODIFIED="1712080697015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
+    <SUITE FILE_PATH="coverage/readmeExtractor@ReadmeExtractor_extract_from_gem_file_when_the_gem_contains_a_README_file_finds_and_reads_the_md_README_file.rcov" NAME="ReadmeExtractor#extract_from_gem_file when the gem contains a README file finds and reads the md README file Coverage Results" MODIFIED="1712190670731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="readmeExtractor" />
   </component>
 </project>

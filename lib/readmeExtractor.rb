@@ -6,6 +6,7 @@ require "zlib"
 require "fileutils"
 require "pathname"
 require "rdoc"
+require 'stringio'
 class ReadmeExtractor
   class Error < StandardError; end
   class GemFileNameError < StandardError; end
@@ -15,17 +16,13 @@ class ReadmeExtractor
   def perform(from, to)
     gem_list = gem_list_prepare(from)
     gem_list.each do |gem_name, gem_info|
-      gem_data = extract_from_gem_file(gem_info[:gem_path])
-      FileUtils.mkdir_p("#{to}/#{gem_name}")
-      File.write("#{to}/#{gem_name}/readme.md", gem_data[:readme])
-      File.write("#{to}/#{gem_name}/metadata.yml", gem_data[:metadata])
-      File.write("#{to}/#{gem_name}/version", gem_data[:version])
+      extract_from_gem_file(gem_info[:gem_path], to, gem_info[:version])
     end
   end
 
   def gem_list_prepare(from)
     raise FromPathError, 'Is not a folder' unless File.directory? from
-    gem_paths = Dir["#{from}/*"]
+    gem_paths = Dir[Pathname(from).join('*')]
     gems = {}
     gem_paths.each do |gem_path|
       basename = File.basename gem_path
@@ -43,11 +40,13 @@ class ReadmeExtractor
     gems
   end
 
-  def extract_from_gem_file(gem_path)
-    r = {
-      readme: nil,
-      metadata: nil
-    }
+  def extract_from_gem_file(gem_path, to, version)
+    output_folder = Pathname(to).join(File.basename gem_path)
+    readme_file = output_folder.join("readme.md").to_s
+    metadata_file = output_folder.join("metadata.gz").to_s
+    version_file = output_folder.join("version").to_s
+    FileUtils.mkdir_p(output_folder)
+    File.write(version_file, version)
     magic = File.binread(gem_path, 2)
     is_gzipped = magic == "\x1F\x8B"
     File.open(gem_path, "rb") do |file|
@@ -57,7 +56,7 @@ class ReadmeExtractor
         tar.each do |entry|
           case entry.full_name.downcase
           when 'metadata.gz'
-              r['metadata.gz'] = entry.read
+            File.binwrite(metadata_file, entry.read)
           when "data.tar.gz"
             data_tar_io = StringIO.new(entry.read)
             Zlib::GzipReader.wrap(data_tar_io) do |data_gz|
@@ -65,21 +64,20 @@ class ReadmeExtractor
                 data_tar.each do |data_entry|
                   case data_entry.full_name.downcase
                   when "readme.md"
-                    r[:readme] = data_entry.read
+                    File.write(readme_file, data_entry.read)
                   when 'readme.rdoc'
-                    next if r[:readme]
-                    r[:readme] =  RDoc::Markup::ToMarkdown.new.convert(data_entry.read)
+                    next if File.exist? readme_file
+                    File.write(readme_file, RDoc::Markup::ToMarkdown.new.convert(data_entry.read))
                   end
                 end
-                raise GemContentError, "#{gem_path} unable to find readme file" unless r[:readme]
+                raise GemContentError, "#{gem_path} unable to find readme file" unless  File.exist? readme_file
               end
             end
           end
         end
-        raise GemContentError, "#{gem_path} doesnt have data.tar.gz file" unless r[:readme] || r[:metadata]
+        raise GemContentError, "#{gem_path} doesnt have data.tar.gz file" unless File.exist? metadata_file
       end
     end
-    r
   rescue Zlib::GzipFile::Error => e
     puts "Error reading gem file: #{gem_path}, #{e.message}"
   rescue GemContentError => e

@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+require_relative '../lib/readmeExtractor'
+# readmeExtractor command-line utility
+# Usage: readmeExtractor start --from [source] --to [destination]
+
+# Remove the first argument if it's 'start'
+if ARGV[0] == 'start'
+  ARGV.shift  # Remove the first element ('start') to process the rest as key-value pairs
+else
+  puts "Usage: readmeExtractor start --from [source] --to [destination]"
+  exit
+end
+
+
+args = ARGV.each_slice(2).to_a.to_h  # Splits ARGV into a hash by pairs
+
+from = args["--from"]
+to = args["--to"]
+
+if from && to
+  ReadmeExtractor.new.perform(from, to)
+else
+  puts "Usage: readmeExtractor start --from [source] --to [destination]"
+end
