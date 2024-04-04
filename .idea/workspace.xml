@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="498de637-dc03-411b-95ac-0b51722d3495" name="Changes" comment="Update gemspec and enhance ReadmeExtractor tests&#10;&#10;Refined the gemspec file and amplified test coverage for the ReadmeExtractor class. This includes augmenting the gemspec with a more appropriate summary, description, and executable settings. Ruby version targets were updated and new rules were added for RuboCop.">
+    <list default="true" id="498de637-dc03-411b-95ac-0b51722d3495" name="Changes" comment="Update Gemfile.lock with simplecov-cobertura &#10;&#10;Added simplecov-cobertura to the Gemfile.lock and updated the simplecov version. The new addition extends the testing capabilities by generating coverage reports in the Cobertura XML format.">
       <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readmeExtractor.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/readmeExtractor.gemspec" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,7 +327,7 @@
       <workItem from="1712080319056" duration="456000" />
       <workItem from="1712141648494" duration="2338000" />
       <workItem from="1712184047298" duration="197000" />
-      <workItem from="1712184252405" duration="8822000" />
+      <workItem from="1712184252405" duration="9007000" />
     </task>
     <task id="LOCAL-00001" summary="Update gemspec and add tests for ReadmeExtractor&#10;&#10;Implemented tests for ReadmeExtractor class. Also, updated the gemspec by providing proper summary, description, and setting executable. Updated the Ruby version target and added new rules for RuboCop.">
       <option name="closed" value="true" />
@@ -349,7 +345,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712192327319</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add new .gem fixture files for testing&#10;&#10;Introduced new .gem fixture files for spec testing. Files added include - complex-version-2.2.2.2.gem, platform-10.1.1-java.gem, version-2.2.2.gem and version-10.1.1.gem. These serve to enhance testing versatility and accuracy.">
+      <option name="closed" value="true" />
+      <created>1712193103510</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712193103510</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update Gemfile.lock with simplecov-cobertura &#10;&#10;Added simplecov-cobertura to the Gemfile.lock and updated the simplecov version. The new addition extends the testing capabilities by generating coverage reports in the Cobertura XML format.">
+      <option name="closed" value="true" />
+      <created>1712193146615</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712193146615</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,7 +370,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update gemspec and add tests for ReadmeExtractor&#10;&#10;Implemented tests for ReadmeExtractor class. Also, updated the gemspec by providing proper summary, description, and setting executable. Updated the Ruby version target and added new rules for RuboCop." />
     <MESSAGE value="Update gemspec and enhance ReadmeExtractor tests&#10;&#10;Refined the gemspec file and amplified test coverage for the ReadmeExtractor class. This includes augmenting the gemspec with a more appropriate summary, description, and executable settings. Ruby version targets were updated and new rules were added for RuboCop." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update gemspec and enhance ReadmeExtractor tests&#10;&#10;Refined the gemspec file and amplified test coverage for the ReadmeExtractor class. This includes augmenting the gemspec with a more appropriate summary, description, and executable settings. Ruby version targets were updated and new rules were added for RuboCop." />
+    <MESSAGE value="Add SimpleCov for test coverage and update GitHub actions&#10;&#10;Implemented SimpleCov with filters for more accurate test coverage and refined GitHub action workflow. Additionally, .gitignore and the README file have been updated." />
+    <MESSAGE value="Add new .gem fixture files for testing&#10;&#10;Introduced new .gem fixture files for spec testing. Files added include - complex-version-2.2.2.2.gem, platform-10.1.1-java.gem, version-2.2.2.gem and version-10.1.1.gem. These serve to enhance testing versatility and accuracy." />
+    <MESSAGE value="Update Gemfile.lock with simplecov-cobertura &#10;&#10;Added simplecov-cobertura to the Gemfile.lock and updated the simplecov version. The new addition extends the testing capabilities by generating coverage reports in the Cobertura XML format." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Gemfile.lock with simplecov-cobertura &#10;&#10;Added simplecov-cobertura to the Gemfile.lock and updated the simplecov version. The new addition extends the testing capabilities by generating coverage reports in the Cobertura XML format." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
