@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="498de637-dc03-411b-95ac-0b51722d3495" name="Changes" comment="Increase required Ruby version and clean up workspace.xml &#10;&#10;The minimum required Ruby">
+    <list default="true" id="498de637-dc03-411b-95ac-0b51722d3495" name="Changes" comment="Add 'panolint' gem to Gemfile&#10;&#10;This commit introduces the 'panolint' gem, version '~&gt; 0.1.6', to the project's Gemfile. This is done to improve the quality of the code and to perform linting tasks for code inspection and cleanup.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.rubocop.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.rubocop.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rakefile" beforeDir="false" afterPath="$PROJECT_DIR$/Rakefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/console" beforeDir="false" afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/readmeExtractor" beforeDir="false" afterPath="$PROJECT_DIR$/bin/readmeExtractor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/readmeExtractor.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/readmeExtractor.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/readmeExtractor/version.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/readmeExtractor/version.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readmeExtractor.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/readmeExtractor.gemspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/readmeExtractor_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/readmeExtractor_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -335,7 +326,7 @@
       <workItem from="1712080319056" duration="456000" />
       <workItem from="1712141648494" duration="2338000" />
       <workItem from="1712184047298" duration="197000" />
-      <workItem from="1712184252405" duration="9917000" />
+      <workItem from="1712184252405" duration="10560000" />
     </task>
     <task id="LOCAL-00001" summary="Update gemspec and add tests for ReadmeExtractor&#10;&#10;Implemented tests for ReadmeExtractor class. Also, updated the gemspec by providing proper summary, description, and setting executable. Updated the Ruby version target and added new rules for RuboCop.">
       <option name="closed" value="true" />
@@ -377,7 +368,31 @@
       <option name="project" value="LOCAL" />
       <updated>1712193280109</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update code to use single quotes &#10;&#10;This commit updates the codebase to use single quotes instead of double quotes. The code style is updated in various Ruby files and gem specifications. This change improves readability and consistency throughout the codebase. &#10;&#10;This commit also updates the required Ruby version in the Rubocop configuration.">
+      <option name="closed" value="true" />
+      <created>1712194220585</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712194220586</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add 'panolint' gem to Gemfile&#10;&#10;This commit introduces the 'panolint' gem, version '~&gt; 0.1.6', to the project's Gemfile. This is done to improve the quality of the code and to perform linting tasks for code inspection and cleanup.">
+      <option name="closed" value="true" />
+      <created>1712194406947</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712194406947</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add 'panolint' gem to Gemfile&#10;&#10;This commit introduces the 'panolint' gem, version '~&gt; 0.1.6', to the project's Gemfile. This is done to improve the quality of the code and to perform linting tasks for code inspection and cleanup.">
+      <option name="closed" value="true" />
+      <created>1712194412778</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712194412778</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +405,11 @@
     <MESSAGE value="Add new .gem fixture files for testing&#10;&#10;Introduced new .gem fixture files for spec testing. Files added include - complex-version-2.2.2.2.gem, platform-10.1.1-java.gem, version-2.2.2.gem and version-10.1.1.gem. These serve to enhance testing versatility and accuracy." />
     <MESSAGE value="Update Gemfile.lock with simplecov-cobertura &#10;&#10;Added simplecov-cobertura to the Gemfile.lock and updated the simplecov version. The new addition extends the testing capabilities by generating coverage reports in the Cobertura XML format." />
     <MESSAGE value="Increase required Ruby version and clean up workspace.xml &#10;&#10;The minimum required Ruby" />
-    <option name="LAST_COMMIT_MESSAGE" value="Increase required Ruby version and clean up workspace.xml &#10;&#10;The minimum required Ruby" />
+    <MESSAGE value="main: Increase required Ruby version and clean up workspace.xml&#10;&#10;The minimum required Ruby version" />
+    <MESSAGE value="Increase required Ruby version and clean up workspace.xml &#10;&#10;The minimum required Rubyspec has been raised to 3.3.0. The workspace.xml file has been cleaned up, removing some unused elements and references to outdated tasks. The changes also include a small adjustment to workItem duration." />
+    <MESSAGE value="Update code to use single quotes &#10;&#10;This commit updates the codebase to use single quotes instead of double quotes. The code style is updated in various Ruby files and gem specifications. This change improves readability and consistency throughout the codebase. &#10;&#10;This commit also updates the required Ruby version in the Rubocop configuration." />
+    <MESSAGE value="Add 'panolint' gem to Gemfile&#10;&#10;This commit introduces the 'panolint' gem, version '~&gt; 0.1.6', to the project's Gemfile. This is done to improve the quality of the code and to perform linting tasks for code inspection and cleanup." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add 'panolint' gem to Gemfile&#10;&#10;This commit introduces the 'panolint' gem, version '~&gt; 0.1.6', to the project's Gemfile. This is done to improve the quality of the code and to perform linting tasks for code inspection and cleanup." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
