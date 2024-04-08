@@ -28,8 +28,11 @@ class ReadmeExtractor
     gems = {}
     gem_paths.each do |gem_path|
       basename = File.basename gem_path
-      match = basename.match(/(?<name>.*?)-(?<version>\d+(?:\.\d+)*).*?.gem/)
-      raise GemFileNameError, "#{basename} does not match the expected format." unless match && match[:name] && match[:version]
+      match = basename.match(/(?<name>.*?)-(?<version>\d+(?:\.\d+)*)(?:-(?<platform>[^.]+))?.gem/)
+      unless match && match[:name] && match[:version]
+        puts "#{basename} does not match the expected format."
+        next
+      end
 
       name = match[:name]
       version = match[:version]

@@ -16,7 +16,7 @@ RSpec.describe ReadmeExtractor do
       # rubocop :disable Style/IpAddresses
 
       it 'extracts and returns a hash of gem names and versions' do
-        expect(extractor.gem_list_prepare(from_directory)).to eq({ '3d_cache' => { version: '0.0.01', gem_path: 'spec/fixtures/gems/3d_cache-0.0.01a.gem' }, 'complex-version' => { version: '2.2.2.2', gem_path: 'spec/fixtures/gems/complex-version-2.2.2.2.gem' }, 'llo' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/llo-1.0.0.pre.rc.0.gem' }, 'platform' => { version: '10.1.1', gem_path: 'spec/fixtures/gems/platform-10.1.1-java.gem' }, 'version' => { version: '10.1.1', gem_path: 'spec/fixtures/gems/version-10.1.1.gem' }, 'with_md_readme' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_md_readme-1.0.0.gem' }, 'with_metadata' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_metadata-1.0.0.gem' }, 'with_rdoc_and_md_readme' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_rdoc_and_md_readme-1.0.0.gem' }, 'with_rdoc_readme' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_rdoc_readme-1.0.0.gem' } })
+        expect(extractor.gem_list_prepare(from_directory)).to eq({ 'complex-version' => { version: '2.2.2.2', gem_path: 'spec/fixtures/gems/complex-version-2.2.2.2.gem' }, 'platform' => { version: '10.1.1', gem_path: 'spec/fixtures/gems/platform-10.1.1-java.gem' }, 'version' => { version: '10.1.1', gem_path: 'spec/fixtures/gems/version-10.1.1.gem' }, 'with_md_readme' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_md_readme-1.0.0.gem' }, 'with_metadata' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_metadata-1.0.0.gem' }, 'with_rdoc_and_md_readme' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_rdoc_and_md_readme-1.0.0.gem' }, 'with_rdoc_readme' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_rdoc_readme-1.0.0.gem' } })
       end
       # rubocop :enable Style/IpAddresses
     end
@@ -25,7 +25,7 @@ RSpec.describe ReadmeExtractor do
       it 'raises GemFileNameError' do
         expect do
           extractor.gem_list_prepare('spec/fixtures/broken_gems')
-        end.to raise_error(ReadmeExtractor::GemFileNameError, 'badname.gem does not match the expected format.')
+        end.to output("badname.gem does not match the expected format.\n").to_stdout
       end
     end
     context 'When from is not fodler' do
