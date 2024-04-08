@@ -14,8 +14,9 @@ RSpec.describe ReadmeExtractor do
   describe '#gem_list_prepare' do
     context 'when gem files are present' do
       # rubocop :disable Style/IpAddresses
+
       it 'extracts and returns a hash of gem names and versions' do
-        expect(extractor.gem_list_prepare(from_directory)).to eq({ 'complex-version' => { version: '2.2.2.2', gem_path: 'spec/fixtures/gems/complex-version-2.2.2.2.gem' }, 'platform' => { version: '10.1.1', gem_path: 'spec/fixtures/gems/platform-10.1.1-java.gem' }, 'version' => { version: '10.1.1', gem_path: 'spec/fixtures/gems/version-10.1.1.gem' }, 'with_md_readme' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_md_readme-1.0.0.gem' }, 'with_metadata' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_metadata-1.0.0.gem' }, 'with_rdoc_and_md_readme' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_rdoc_and_md_readme-1.0.0.gem' }, 'with_rdoc_readme' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_rdoc_readme-1.0.0.gem' } })
+        expect(extractor.gem_list_prepare(from_directory)).to eq({ 'alpha' => { gem_path: 'spec/fixtures/gems/alpha-1.0.0a.gem', version: '1.0.0' }, 'complex-version' => { version: '2.2.2.2', gem_path: 'spec/fixtures/gems/complex-version-2.2.2.2.gem' }, 'platform' => { version: '10.1.1', gem_path: 'spec/fixtures/gems/platform-10.1.1-java.gem' }, 'version' => { version: '10.1.1', gem_path: 'spec/fixtures/gems/version-10.1.1.gem' }, 'with_md_readme' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_md_readme-1.0.0.gem' }, 'with_metadata' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_metadata-1.0.0.gem' }, 'with_rdoc_and_md_readme' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_rdoc_and_md_readme-1.0.0.gem' }, 'with_rdoc_readme' => { version: '1.0.0', gem_path: 'spec/fixtures/gems/with_rdoc_readme-1.0.0.gem' } })
       end
       # rubocop :enable Style/IpAddresses
     end
