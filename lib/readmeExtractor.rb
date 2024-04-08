@@ -28,7 +28,9 @@ class ReadmeExtractor
     gems = {}
     gem_paths.each do |gem_path|
       basename = File.basename gem_path
+
       match = basename.match(/(?<name>.*?)-(?<version>\d+(?:\.\d+)*)(?:-(?<platform>[^.]+))?.gem/)
+
       unless match && match[:name] && match[:version]
         puts "#{basename} does not match the expected format."
         next
@@ -40,6 +42,8 @@ class ReadmeExtractor
       if Gem::Version.new(version) > Gem::Version.new(gems[name][:version])
         gems[name] = { version:, gem_path: }
       end
+    rescue Encoding::CompatibilityError => e
+      puts "Encoding::CompatibilityError #{e.message}"
     end
     gems
   end
