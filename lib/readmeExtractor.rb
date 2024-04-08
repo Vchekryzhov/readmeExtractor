@@ -16,6 +16,7 @@ class ReadmeExtractor
   def perform(from, to)
     gem_list = gem_list_prepare(from)
     gem_list.each_value do |gem_info|
+      puts "Extracting #{gem_info[:gem_path]}..."
       extract_from_gem_file(gem_info[:gem_path], to, gem_info[:version])
     end
   end
