@@ -18,6 +18,8 @@ class ReadmeExtractor
     gem_list.each_value do |gem_info|
       puts "Extracting #{gem_info[:gem_path]}..."
       extract_from_gem_file(gem_info[:gem_path], to, gem_info[:version])
+    rescue Encoding::CompatibilityError => e
+      puts "Extracting Error Encoding::CompatibilityError #{e.message}"
     end
   end
 
@@ -43,7 +45,7 @@ class ReadmeExtractor
         gems[name] = { version:, gem_path: }
       end
     rescue Encoding::CompatibilityError => e
-      puts "Encoding::CompatibilityError #{e.message}"
+      puts "gem list prepare error  Encoding::CompatibilityError #{e.message}"
     end
     gems
   end
