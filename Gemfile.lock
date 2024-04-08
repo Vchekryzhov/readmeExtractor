@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    readmeExtractor (0.1.4)
+    readmeExtractor (0.1.5)
 
 GEM
   remote: https://rubygems.org/
